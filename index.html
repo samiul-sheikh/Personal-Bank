@@ -28,7 +28,9 @@
         // add event listener to enter button
         const loginBtn = document.getElementById("login");
         loginBtn.addEventListener("click", function () {
-            console.log("someone click me!");
+            // when click enter button hide login page
+            const loginArea = document.getElementById("login-area");
+            loginArea.style.display = "none";
         })
     </script>
 </body>
