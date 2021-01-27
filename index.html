@@ -76,7 +76,7 @@
             // when click enter button hide login page
             const loginArea = document.getElementById("login-area");
             loginArea.style.display = "none";
-            // when click enter button show transaction area
+            // when click enter button show transaction page
             const transactionArea = document.getElementById("transaction-area");
             transactionArea.style.display = "block";
         })
@@ -87,22 +87,20 @@
             const depositAmount = document.getElementById("depositAmount").value;
             const depositNumber = parseFloat(depositAmount);
 
-            // convert current deposit string to number + new amount
-            const currentDeposit = document.getElementById("currentDeposit").innerText;
-            const currentDepositNumber = parseFloat(currentDeposit);
-            const totalDeposit = depositNumber + currentDepositNumber;
-            // show the total amount in deposit area
-            document.getElementById("currentDeposit").innerText = totalDeposit;
-
-            // convert current balance string to number + new amount
-            const currentBalance = document.getElementById("currentBalance").innerText;
-            const currentBalanceNumber = parseFloat(currentBalance);
-            const totalBalance = depositNumber + currentBalanceNumber;
-            // show the total amount in balance area
-            document.getElementById("currentBalance").innerText = totalBalance;
+            updateSpanText("currentDeposit", depositNumber);
+            updateSpanText("currentBalance", depositNumber);
 
             document.getElementById("depositAmount").value = "";
         })
+
+        function updateSpanText(id, depositNumber) {
+            // convert current deposit/balance amount string to number + new amount
+            const current = document.getElementById(id).innerText;
+            const currentNumber = parseFloat(current);
+            const totalAmount = depositNumber + currentNumber;
+            // show the total amount in deposit/balance area
+            document.getElementById(id).innerText = totalAmount;
+        }
     </script>
 </body>
 
