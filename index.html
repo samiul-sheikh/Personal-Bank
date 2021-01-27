@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- design login page -->
     <div id="login-area">
         <h1 class="text-center">Welcome to Personal Bank</h1>
         <div class="submit-area">
@@ -24,6 +25,9 @@
             <button id="login" class="btn btn-success">Enter</button>
         </div>
     </div>
+    <div id="transaction-area">
+        <h1>Transaction Area</h1>
+    </div>
     <script>
         // add event listener to enter button
         const loginBtn = document.getElementById("login");
@@ -31,6 +35,9 @@
             // when click enter button hide login page
             const loginArea = document.getElementById("login-area");
             loginArea.style.display = "none";
+            // when click enter button show transaction area
+            const transactionArea = document.getElementById("transaction-area");
+            transactionArea.style.display = "block";
         })
     </script>
 </body>
