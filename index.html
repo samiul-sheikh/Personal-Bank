@@ -110,11 +110,11 @@
             return amountNumber;
         }
 
-        function updateSpanText(id, depositNumber) {
+        function updateSpanText(id, addedNumber) {
             // convert current deposit/balance amount string to number + new amount
             const current = document.getElementById(id).innerText;
             const currentNumber = parseFloat(current);
-            const totalAmount = depositNumber + currentNumber;
+            const totalAmount = addedNumber + currentNumber;
             // show the total amount in deposit/balance area
             document.getElementById(id).innerText = totalAmount;
         }
