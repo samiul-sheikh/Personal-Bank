@@ -15,7 +15,7 @@ depositBtn.addEventListener("click", function () {
     const depositNumber = getInputNumber("depositAmount");
 
     if (depositNumber < 0) {
-        alert("Deposit Number cannot be negative");
+        alert("Deposit number cannot be negative");
     }
     else {
         updateSpanText("currentDeposit", depositNumber);
@@ -30,10 +30,15 @@ const withdrawBtn = document.getElementById("addWithdraw")
 withdrawBtn.addEventListener("click", function () {
     const withdrawNumber = getInputNumber("withdrawAmount");
 
-    updateSpanText("currentWithdraw", withdrawNumber);
-    updateSpanText("currentBalance", -1 * withdrawNumber);
+    if (withdrawNumber < 0) {
+        alert("Withdraw number cannot be negative");
+    }
+    else {
+        updateSpanText("currentWithdraw", withdrawNumber);
+        updateSpanText("currentBalance", -1 * withdrawNumber);
 
-    document.getElementById("withdrawAmount").value = "";
+        document.getElementById("withdrawAmount").value = "";
+    }
 })
 
 function getInputNumber(id) {
